@@ -90,6 +90,8 @@ unused-exhibit-lab-view.png
 
 รูปภาพไม่ได้ถูกแยกไว้เป็นหัวข้อหลักฐานท้ายไฟล์ แต่ถูกแทรกไว้ในขั้นตอนการทำ Lab โดยตรง เพื่อให้ผู้อ่านเห็นภาพประกอบในบริบทของแต่ละขั้นตอน
 
+มาตรฐานปัจจุบันของโปรเจกต์คือ ทุกขั้นตอนการทำ Lab ใน README ควรมีรูปภาพประกอบอยู่ในขั้นตอนนั้นโดยตรง เพื่อให้ผู้อ่านสามารถเทียบข้อความกับหน้าจอจริงได้ทันที
+
 การจัดวางรูปใน README มีดังนี้:
 
 1. รูป Exhibit อยู่ในขั้นตอนเปิด Exhibit
@@ -183,7 +185,7 @@ Connect the laptop in Office 2 to the CorpNet wireless network: Completed
 07-office2-laptop-corpnet-connected.png
 08-ticket-comment-and-closed.png
 09-score-100.png
-unused-floor-overview-office2.png
+10-floor-overview-office2.png
 unused-itadmin-corpnet-before-connect.png
 unused-office2-corpnet-before-connect.png
 unused-office2-hardware-overview.png
@@ -191,11 +193,13 @@ unused-office2-laptop-desktop-before.png
 unused-office2-wifi-available.png
 ```
 
-รูปที่ใช้จริงใน README คือรูปที่ขึ้นต้นด้วยเลข `01` ถึง `09` ส่วนรูปที่ขึ้นต้นด้วย `unused-` เป็นรูปที่เก็บไว้ในโฟลเดอร์ แต่ไม่ได้ใช้ใน README เพราะมีรูปอื่นที่ชัดกว่า หรือสื่อขั้นตอนเดียวกันได้ครบกว่า
+รูปที่ใช้จริงใน README คือรูปที่ขึ้นต้นด้วยเลข `01` ถึง `10` ส่วนรูปที่ขึ้นต้นด้วย `unused-` เป็นรูปที่เก็บไว้ในโฟลเดอร์ แต่ไม่ได้ใช้ใน README เพราะมีรูปอื่นที่ชัดกว่า หรือสื่อขั้นตอนเดียวกันได้ครบกว่า
 
 ## สถานะปัจจุบัน
 
 Lab `6.2.7 Lab Configure IP Addresses`, `7.3.3 Lab Fix a Network Connection` และ `7.4 Lab Troubleshoot a Network Issue` ทำเสร็จแล้ว และ README ของแต่ละ Lab ถูกจัดรูปแบบพร้อมใช้งานสำหรับเป็น write-up
+
+รูปภาพใน README ถูกวางตามขั้นตอนการทำ Lab โดยตรง และใน Lab ล่าสุดมีรูปประกอบครบทุกขั้นตอนการทำ Lab เพื่อใช้เป็นแนวทางมาตรฐานสำหรับ Lab ถัดไป
 
 ผลลัพธ์ของ Lab ที่บันทึกไว้:
 
@@ -224,5 +228,5 @@ README ของแต่ละ Lab ควรมี:
 4. วิธีคำนวณถ้ามี
 5. ขั้นตอนการทำแบบละเอียด
 6. เหตุผลว่าทำไมต้องทำแต่ละขั้นตอน
-7. รูปภาพประกอบในจุดที่เกี่ยวข้อง
+7. รูปภาพประกอบทุกขั้นตอนการทำ Lab โดยวางไว้ใต้ขั้นตอนที่เกี่ยวข้องโดยตรง
 8. สรุปผลลัพธ์สุดท้าย

@@ -50,14 +50,6 @@
 
 เหตุผลที่ต้องอ่าน ticket ก่อน เพราะ ticket ระบุว่าเครื่องที่มีปัญหาคือ `Laptop in Office 2` ดังนั้นการแก้ปัญหาต้องไปที่เครื่อง `Office2-Lap` ไม่ใช่แก้ที่เครื่อง `ITAdmin`
 
-![Issue Trax open ticket list showing ticket 25](images/01-issue-trax-open-ticket-list.png)
-
-ภาพนี้แสดงหน้า Open Tickets ใน Issue Trax โดยมี ticket `#25` เรื่อง `Can't connect to Internet` ถูก assign ให้ผู้ดูแลระบบ
-
-![Ticket details showing the affected device is the Office 2 laptop](images/02-ticket-details-office2-laptop.png)
-
-ภาพนี้แสดงรายละเอียด ticket โดยระบุว่า user ไม่สามารถเชื่อมต่อ `CorpNet wireless network` ได้ และเครื่องที่เกี่ยวข้องคือ `Laptop in Office 2`
-
 ## วิธีวิเคราะห์ปัญหา
 
 Lab นี้ไม่มีการคำนวณ IP address แบบ Lab ก่อนหน้า แต่ใช้การวิเคราะห์ปัญหาแบบค่อย ๆ ตัดสาเหตุที่เป็นไปได้ออก
@@ -76,10 +68,6 @@ CorpNet SSID ยัง broadcast อยู่
 
 ดังนั้นปัญหาน่าจะจำกัดอยู่ที่ laptop ใน Office 2
 
-![ITAdmin connected to CorpNet wireless network](images/03-itadmin-corpnet-connected.png)
-
-ภาพนี้แสดงว่าเครื่อง `ITAdmin` สามารถเชื่อมต่อ `CorpNet` ได้สำเร็จ จึงช่วยยืนยันว่า wireless network ของบริษัทไม่ได้ล่ม
-
 ### 2. ตรวจอาการบน Office2-Lap
 
 เมื่อไปที่เครื่อง `Office2-Lap` แล้วพบว่าแผง network ไม่มีตัวเลือก Wi-Fi ให้เชื่อมต่อ หรือยังแสดงสถานะ `Not connected` แสดงว่าเครื่อง laptop อาจยังไม่ได้เปิดใช้งาน wireless network interface
@@ -93,10 +81,6 @@ CorpNet SSID ยัง broadcast อยู่
 
 แต่จากการที่ `ITAdmin` เชื่อมต่อ `CorpNet` ได้แล้ว จึงตัดข้อ 3 และ 4 ออกได้ เหลือสาเหตุที่น่าสงสัยที่สุดคือ wireless ของ laptop ถูกปิดอยู่ที่ตัวเครื่อง
 
-![Office2-Lap network panel showing no usable Wi-Fi connection](images/04-office2-laptop-no-wifi-option.png)
-
-ภาพนี้แสดงว่า `Office2-Lap` ยังไม่ได้เชื่อมต่อ network และยังไม่สามารถเลือก wireless network ได้ตามปกติ จึงต้องตรวจสอบด้าน hardware ต่อ
-
 ## ขั้นตอนการทำ Lab
 
 ### ขั้นตอนที่ 1: เปิด Issue Trax บนเครื่อง ITAdmin
@@ -109,6 +93,10 @@ CorpNet SSID ยัง broadcast อยู่
 6. ที่หน้า `Open Tickets` เลือก ticket `#25`
 
 เหตุผลที่ต้องเริ่มจาก `Issue Trax` เพราะโจทย์ต้องการให้แก้ปัญหาตาม ticket ที่ได้รับมอบหมาย ไม่ใช่แก้แบบเดาสุ่ม
+
+![Issue Trax open ticket list showing ticket 25](images/01-issue-trax-open-ticket-list.png)
+
+ภาพนี้แสดงหน้า Open Tickets ใน Issue Trax โดยมี ticket `#25` เรื่อง `Can't connect to Internet` ถูก assign ให้ผู้ดูแลระบบ
 
 ### ขั้นตอนที่ 2: อ่านรายละเอียด Ticket
 
@@ -128,6 +116,10 @@ Device Info: Laptop in Office 2
 
 เหตุผลที่ต้องดู `Device Info` เพราะใน lab มีหลายห้องและหลายเครื่อง ถ้าไปแก้ผิดเครื่องจะไม่ผ่านคะแนน
 
+![Ticket details showing the affected device is the Office 2 laptop](images/02-ticket-details-office2-laptop.png)
+
+ภาพนี้แสดงรายละเอียด ticket โดยระบุว่า user ไม่สามารถเชื่อมต่อ `CorpNet wireless network` ได้ และเครื่องที่เกี่ยวข้องคือ `Laptop in Office 2`
+
 ### ขั้นตอนที่ 3: ทดสอบ CorpNet จากเครื่อง ITAdmin
 
 1. ที่เครื่อง `ITAdmin` คลิกไอคอน network บริเวณ notification area
@@ -143,6 +135,10 @@ CorpNet
 
 เหตุผลที่ต้องทดสอบจาก `ITAdmin` ก่อน เพราะถ้าเครื่องนี้ต่อ `CorpNet` ได้ แสดงว่า wireless access point เปิดอยู่และ SSID ยัง broadcast อยู่ ปัญหาจึงไม่ได้เกิดจากระบบ wireless ทั้งบริษัท
 
+![ITAdmin connected to CorpNet wireless network](images/03-itadmin-corpnet-connected.png)
+
+ภาพนี้แสดงว่าเครื่อง `ITAdmin` สามารถเชื่อมต่อ `CorpNet` ได้สำเร็จ จึงช่วยยืนยันว่า wireless network ของบริษัทไม่ได้ล่ม
+
 ### ขั้นตอนที่ 4: ไปยังเครื่อง Office2-Lap
 
 1. กด breadcrumb ด้านบนไปที่ `Floor 1 Overview`
@@ -151,6 +147,10 @@ CorpNet
 
 เหตุผลที่ต้องไปเครื่องนี้ เพราะ ticket ระบุชัดว่าอุปกรณ์ที่มีปัญหาคือ laptop ใน Office 2
 
+![Floor 1 Overview showing Office 2 navigation](images/10-floor-overview-office2.png)
+
+ภาพนี้แสดงการเลือกพื้นที่ `Office 2` จาก `Floor 1 Overview` เพื่อไปยังเครื่อง `Office2-Lap` ที่ระบุไว้ใน ticket
+
 ### ขั้นตอนที่ 5: ตรวจสอบอาการใน Windows
 
 1. ที่เครื่อง `Office2-Lap` คลิกไอคอน network หรือ globe icon มุมขวาล่าง
@@ -158,6 +158,10 @@ CorpNet
 3. พบว่าเครื่องยังไม่สามารถเชื่อมต่อ wireless network ได้ตามปกติ
 
 เหตุผลที่ต้องตรวจจาก Windows ก่อน เพราะเป็นการยืนยันอาการที่ผู้ใช้แจ้ง คือ laptop ยังไม่สามารถเชื่อมต่อ `CorpNet` ได้
+
+![Office2-Lap network panel showing no usable Wi-Fi connection](images/04-office2-laptop-no-wifi-option.png)
+
+ภาพนี้แสดงว่า `Office2-Lap` ยังไม่ได้เชื่อมต่อ network และยังไม่สามารถเลือก wireless network ได้ตามปกติ จึงต้องตรวจสอบด้าน hardware ต่อ
 
 ### ขั้นตอนที่ 6: เปิด Hardware View ของ Office 2
 
@@ -229,6 +233,10 @@ Checked the Office 2 laptop and found that the wireless switch was turned off. T
 7. กดปุ่ม `+` เพื่อเพิ่ม comment
 
 เหตุผลที่ต้องเขียน comment เพราะ ticket ต้องมีบันทึกว่า technician ตรวจพบอะไรและแก้ไขอย่างไร เพื่อให้ผู้ใช้งานหรือทีม IT คนอื่นตรวจสอบย้อนหลังได้
+
+![Ticket comment added before closing the ticket](images/08-ticket-comment-and-closed.png)
+
+ภาพนี้แสดง comment ที่บันทึกการแก้ไขไว้ใน ticket ซึ่งเป็นหลักฐานว่าได้อธิบายสาเหตุและวิธีแก้ไขแล้ว
 
 ### ขั้นตอนที่ 10: ปิด Ticket
 
