@@ -11,7 +11,10 @@ CompTIA A+/
 ├── 6.2.7 Lab Configure IP Addresses/
 │   ├── README.md
 │   └── images/
-└── 7.3.3 Lab Fix a Network Connection/
+├── 7.3.3 Lab Fix a Network Connection/
+│   ├── README.md
+│   └── images/
+└── 7.4 Lab Troubleshoot a Network Issue/
     ├── README.md
     └── images/
 ```
@@ -27,6 +30,7 @@ CompTIA A+/
 ```text
 6.2.7 Lab Configure IP Addresses
 7.3.3 Lab Fix a Network Connection
+7.4 Lab Troubleshoot a Network Issue
 ```
 
 เหตุผลที่แยกเป็นโฟลเดอร์ Lab คือเพื่อให้แต่ละ Lab มี README และรูปภาพประกอบของตัวเอง ไม่ปะปนกับ Lab อื่น
@@ -144,17 +148,61 @@ unused-ipconfig-apipa-before-static.png
 
 รูปที่ใช้จริงใน README คือรูปที่ขึ้นต้นด้วยเลข `01` ถึง `08` ส่วนรูปที่ขึ้นต้นด้วย `unused-` เป็นรูปที่เก็บไว้ในโฟลเดอร์ แต่ไม่ได้ใช้ใน README เพราะมีรูปอื่นที่อ่านง่ายกว่าหรือสื่อความหมายเดียวกันอยู่แล้ว
 
-## สถานะปัจจุบัน
+### 8. เพิ่ม Lab 7.4 Troubleshoot a Network Issue
 
-Lab `6.2.7 Lab Configure IP Addresses` และ `7.3.3 Lab Fix a Network Connection` ทำเสร็จแล้ว และ README ของแต่ละ Lab ถูกจัดรูปแบบพร้อมใช้งานสำหรับเป็น write-up
+ได้สร้างโฟลเดอร์ `7.4 Lab Troubleshoot a Network Issue` ภายใต้ `CompTIA A+` พร้อมโฟลเดอร์ `images` และไฟล์ `README.md`
+
+Lab นี้เป็นการทำงานผ่านระบบ help desk ticket ชื่อ `Issue Trax` โดยต้องอ่าน ticket `#25` ที่แจ้งว่า laptop ใน `Office 2` ไม่สามารถเชื่อมต่อ `CorpNet wireless network` ได้ จากนั้นต้องตรวจสอบปัญหา แก้ไข เขียน comment ใน ticket และปิด ticket
+
+สาเหตุของปัญหาใน Lab 7.4 คือ:
+
+```text
+Wireless switch บนตัว Office2-Lap อยู่ตำแหน่ง OFF
+```
+
+วิธีแก้ไขคือเปิด wireless switch เป็น `ON` แล้วเชื่อมต่อ laptop เข้ากับ `CorpNet`
 
 ผลลัพธ์ของ Lab:
 
 ```text
 Score: 100%
-Configure settings for Local Area Connection: Completed
-Configure settings for Local Area Connection 2: Completed
-Successfully ping the preferred DNS server: Completed
+Connect the laptop in Office 2 to the CorpNet wireless network: Completed
+```
+
+### 9. จัดการรูปภาพประกอบสำหรับ Lab 7.4
+
+ได้คัดเลือกรูปภาพที่สื่อความหมายดีที่สุดจากรูปที่มีเนื้อหาซ้ำกัน และเปลี่ยนชื่อไฟล์ให้เป็นลำดับตามขั้นตอนดังนี้:
+
+```text
+01-issue-trax-open-ticket-list.png
+02-ticket-details-office2-laptop.png
+03-itadmin-corpnet-connected.png
+04-office2-laptop-no-wifi-option.png
+05-wireless-switch-off.png
+06-wireless-switch-on.png
+07-office2-laptop-corpnet-connected.png
+08-ticket-comment-and-closed.png
+09-score-100.png
+unused-floor-overview-office2.png
+unused-itadmin-corpnet-before-connect.png
+unused-office2-corpnet-before-connect.png
+unused-office2-hardware-overview.png
+unused-office2-laptop-desktop-before.png
+unused-office2-wifi-available.png
+```
+
+รูปที่ใช้จริงใน README คือรูปที่ขึ้นต้นด้วยเลข `01` ถึง `09` ส่วนรูปที่ขึ้นต้นด้วย `unused-` เป็นรูปที่เก็บไว้ในโฟลเดอร์ แต่ไม่ได้ใช้ใน README เพราะมีรูปอื่นที่ชัดกว่า หรือสื่อขั้นตอนเดียวกันได้ครบกว่า
+
+## สถานะปัจจุบัน
+
+Lab `6.2.7 Lab Configure IP Addresses`, `7.3.3 Lab Fix a Network Connection` และ `7.4 Lab Troubleshoot a Network Issue` ทำเสร็จแล้ว และ README ของแต่ละ Lab ถูกจัดรูปแบบพร้อมใช้งานสำหรับเป็น write-up
+
+ผลลัพธ์ของ Lab ที่บันทึกไว้:
+
+```text
+6.2.7 Score: 100%
+7.3.3 Score: 100%
+7.4 Score: 100%
 ```
 
 ## แนวทางสำหรับงานต่อไป
